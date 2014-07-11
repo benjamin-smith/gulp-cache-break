@@ -5,11 +5,19 @@ var gutil = require('gulp-util'),
 const PLUGIN_NAME = 'gulp-cache-break';
 const TIMESTAMP = new Date().getTime();
 
-module.exports = function(assetPath){
+module.exports = function(assetPath, options){
 
   if (!assetPath) {
     throw new PluginError(PLUGIN_NAME, "Missing assetPath!");
   }
+
+  /**
+   * Where the cache-busting timestamp will reside in the file name
+   * append:   foo.js?rel=TIMESTAMP  the default
+   * filename: foo.TIMESTAMP.js
+   * @type string
+   */
+  var position = (options && options.hasOwnProperty('position')) ? options.position : 'append';
 
   /**
    * Append a timestamp to a string
@@ -17,6 +25,10 @@ module.exports = function(assetPath){
    * @returns {String}
    */
   var makeNewUrl = function( filename ) {
+    if (position === 'filename') {
+      return filename.replace(/^(.+)(\.[\w\d]+)$/, '$1.' + TIMESTAMP + '$2');
+    }
+
     return (filename + '?rel=' + TIMESTAMP);
   };
 
@@ -26,6 +38,10 @@ module.exports = function(assetPath){
    * @returns {RegExp}
    */
   var makeTagRegex = function( string ) {
+    if (position === 'filename') {
+      return new RegExp( string.replace(/^(.+)(\.[\w\d]+)$/, '$1(\.\\d+)?$2') );
+    }
+
     return new RegExp( string + '(.+)?(?=")' );
   };
 

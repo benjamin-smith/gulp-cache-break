@@ -1,6 +1,6 @@
 {
   "name": "gulp-cache-break",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Append a timestamp to asset URLs in a web app",
   "main": "index.js",
   "scripts": {
