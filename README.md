@@ -10,14 +10,24 @@ Append a timestamp to asset URLs in a web app.
             .pipe(cacheBreak('assets/js/scripts.js'))
             .pipe(gulp.dest('dist'));
     })
-
-## Credits
-
-* https://github.com/shakyShane/grunt-cache-breaker
-* https://github.com/lazd/gulp-replace/
-
+    
 ## Changelog
+
+### 0.2.0
+
+* Added ability to use optional foo.TIMESTAMP.js naming convention ([#1](https://github.com/benjamin-smith/gulp-cache-break/pull/1))
 
 ### 0.1.0
 
 * First release
+
+## Contributors
+
+* [@benjamin-smith](https://github.com/benjamin-smith)
+* [@rsanchez](https://github.com/rsanchez)
+
+## Inspiration
+
+* https://github.com/shakyShane/grunt-cache-breaker
+* https://github.com/lazd/gulp-replace/
+
