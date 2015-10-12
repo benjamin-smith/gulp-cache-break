@@ -64,9 +64,9 @@ module.exports = function(assetPath, options){
       newData = data.replace( regex, url );
       newData = new Buffer(String(newData))
       file.contents = newData;
-      gutil.log(PLUGIN_NAME+':', assetPath);
+      gutil.log(PLUGIN_NAME + ':', assetPath);
     } else {
-      throw new PluginError(PLUGIN_NAME, "Asset URL not found!");
+      throw new PluginError(PLUGIN_NAME, "Asset URL not found: " + assetPath);
     }
 
     this.push(file);
