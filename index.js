@@ -1,6 +1,7 @@
 var gutil = require('gulp-util'),
   through = require('through2'),
-  es = require('es');
+  es = require('es'),
+  PluginError = gutil.PluginError;
 
 const PLUGIN_NAME = 'gulp-cache-break';
 const TIMESTAMP = new Date().getTime();
