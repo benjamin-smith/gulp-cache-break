@@ -4,14 +4,24 @@ Append a timestamp to asset URLs in a web app.
 
 ## Usage
 
-    gulp.task('cacheBreak', function(callback){
-        gulp.src('templates/header.html')
-            .pipe(cacheBreak('assets/css/styles.css'))
-            .pipe(cacheBreak('assets/js/scripts.js'))
-            .pipe(gulp.dest('dist'));
-    })
-    
+```
+var cacheBreak = require('gulp-cache-break');
+
+...
+
+gulp.task('cacheBreak', function(callback){
+    gulp.src('templates/header.html')
+        .pipe(cacheBreak('assets/css/styles.css'))
+        .pipe(cacheBreak('assets/js/scripts.js'))
+        .pipe(gulp.dest('dist'));
+})
+```
+
 ## Changelog
+
+### 0.2.1
+
+* Added module require example
 
 ### 0.2.0
 
