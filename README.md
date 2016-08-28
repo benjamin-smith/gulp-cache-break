@@ -35,6 +35,7 @@ gulp.task('cacheBreak', function(callback){
 
 * [@benjamin-smith](https://github.com/benjamin-smith)
 * [@rsanchez](https://github.com/rsanchez)
+* [@santi6291](https://github.com/santi6291)
 
 ## Inspiration
 
